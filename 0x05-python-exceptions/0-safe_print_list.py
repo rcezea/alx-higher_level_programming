@@ -6,7 +6,7 @@ def safe_print_list(my_list=[], x=0):
         for item in my_list:
             print(item, end='')
             i += 1
-            if i==x:
+            if i == x:
                 break
         print()
         return i
