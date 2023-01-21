@@ -11,4 +11,5 @@ def safe_print_list(my_list=[], x=0):
         print()
         return i
     except IOError:
-        print("An unknown error occurred")
+        print()
+        return i
