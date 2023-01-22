@@ -1,62 +1,80 @@
 #!/usr/bin/python3
-""" Write a class Square that defines a square """
+# -*- coding: utf-8 -*-
+"""
+This module demonstrates the use of classes by
+creating a square class
+"""
 
 
-class Square:
-    """ initalization of the class attributes and methods"""
+class Square(object):
+    """A class use to represent a square Object"""
+
     def __init__(self, size=0, position=(0, 0)):
-        if isinstance(size, int):
-            self.__size = size
-        else:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        if isinstance(position, tuple):
-            self.__position = position
-        else:
-            raise TypeError("""position must be a tuple of 2\
-            position integers""")
+        """Initialize a square object"""
 
-    """ definition of the public method to return area"""
-    @property
-    def size(self):
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        if isinstance(value, int):
-            self.__size = value
-        else:
-            raise TypeError("size must be an integer")
-        if value < 0:
-            raise ValueError("size must be >= 0")
+        self.size = size
+        self.position = position
 
     @property
     def position(self):
-        return self.__position
+        """Getter for position of square"""
+
+        return self._position
 
     @position.setter
     def position(self, value):
         """Setter for position of square"""
-        if not (len(value) == 2
+        if not(len(value) == 2
                 and type(value) is tuple
                 and type(value[0]) is int
                 and type(value[1]) is int
                 and value[0] >= 0 and value[1] >= 0):
             raise TypeError("position must be a tuple of 2 positive integers")
 
-        self.__position = value
+        self._position = value
+
+    @property
+    def size(self):
+        """A getter function that retrieves a private variable"""
+
+        return self._size
+
+    @size.setter
+    def size(self, value):
+        """A setter variable used to set a private variable"""
+
+        if (isinstance(value, int)) is False:
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self._size = value
 
     def area(self):
-        return self.__size*self.__size
+        """Return the area of this square"""
+
+        return self.size ** 2
 
     def my_print(self):
         """Prints a square"""
         if self.size == 0:
             print()
             return
-        for i in range(self.__position[1]):
+        for i in range(self.position[1]):
             print()
         for i in range(self.size):
-            print(" "*self.__position[0], end="")
-            print('#'*self.__size)
+            print(" "*self.position[0], end="")
+            print('#'*self.size)
+
+
+def my_print(self):
+        if self.__size == 0:
+            print()
+        else:
+            for i in range(self.__position[1]):
+                print()
+            for i in range(0, self.__size):
+                for k in range(0, self.__position[0]):
+                    print(" ", end='')
+                for j in range(0, self.__size):
+                    print("#", end='')
+                print()
