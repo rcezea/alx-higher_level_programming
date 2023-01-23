@@ -22,7 +22,7 @@ class Rectangle:
         return "\n".join(rec)
 
     def __repr__(self):
-        return str("Rectangle (" + str(self.__width) + ", " + str(self.__height) + ")")
+        return str("Rectangle ("+str(self.__width)+", "+str(self.__height)+")")
 
     def __del__(self):
         print("Bye rectangle...")
