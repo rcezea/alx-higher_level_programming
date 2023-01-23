@@ -6,6 +6,7 @@ by: (based on 1-rectangle.py)"""
 class Rectangle:
     """Rectangle class succesfully created"""
     number_of_instances = 0
+    
     def __init__(self, width=0, height=0):
         """initializes the private attributes"""
         self.__width = width
@@ -24,7 +25,7 @@ class Rectangle:
         return "\n".join(rec)
 
     def __repr__(self):
-        return str("Rectangle (" + str(self.__width) + ", " + str(self.__height) + ")")
+        return str("Rectangle ("+str(self.__width)+", "+str(self.__height)+")")
 
     def __del__(self):
         type(self).number_of_instances -= 1
