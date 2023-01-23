@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""Write a class Rectangle that defines a rectangle
-by: (based on 1-rectangle.py)"""
+"""Write a class Rectangle"""
 
 
-class Rectangle:
+class Rectangle(object):
     """Rectangle class succesfully created"""
     def __init__(self, width=0, height=0):
         self.__width = width
