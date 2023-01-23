@@ -5,7 +5,6 @@ by: (based on 1-rectangle.py)"""
 
 class Rectangle:
     """Rectangle class succesfully created"""
-    
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
