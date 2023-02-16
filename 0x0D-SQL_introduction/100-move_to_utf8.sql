@@ -1,3 +1,4 @@
+--converts the character set of a database
 USE hbtn_0c_0;
 ALTER DATABASE hbtn_0c_0
 CHARACTER SET utf8mb4
