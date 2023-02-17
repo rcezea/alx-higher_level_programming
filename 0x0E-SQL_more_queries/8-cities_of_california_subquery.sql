@@ -3,4 +3,5 @@ SELECT id, name FROM hbtn_0d_usa.cities AS s
 WHERE id = (
     SELECT id FROM hbtn_0d_usa.states AS c
     WHERE c.id = s.id
+    ORDER BY s.id
 );
