@@ -12,7 +12,9 @@ if (process.argv[2]) {
   console.log('Missing size');
   return;
 }
+
 let i = val;
+
 while (i > 0) {
   console.log(x.repeat(val));
   i--;
