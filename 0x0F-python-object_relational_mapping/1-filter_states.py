@@ -1,18 +1,10 @@
 #!/usr/bin/python3
 
 import MySQLdb
-from MySQLdb import *
-from sys import argv
+import sys
 
-def main():
-    db = MySQLdb.connect(host="localhost", user=argv[1], password=argv[2], db=argv[3], port=3306)
-
+if __name__ == '__main__':
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
-
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
-
-if __name__ == "__main__":
-    main()
+    cur.execute("SELECT * FROM states ORDER BY id")
+    [print (row) for row in cur.fetchall() if row[1][0] == 'N']
