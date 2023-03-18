@@ -1,26 +1,10 @@
 #!/usr/bin/python3
 
 import MySQLdb
-from sys import argv
-
-
-def main():
-    print(argv[2])
-
-    passw = "'" + argv[2] + "'"
-    print(passw)
-    db = MySQLdb.connect(host="localhost", user=argv[1],
-                         password=eval(passw), db=argv[3])
-
-    cur = db.cursor()
-
-    cur.execute("SELECT * FROM states ORDER BY id")
-
-    rows = cur.fetchall()
-
-    for row in rows:
-        print(row)
-
+import sys
 
 if __name__ == '__main__':
-    main()
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    db = db.cursor()
+    db.execute("SELECT * FROM states ORDER BY id")
+    [print (row) for row in db.fetchall()]
