@@ -14,4 +14,3 @@ if __name__ == '__main__':
     cur.execute("SELECT * FROM states WHERE name LIKE '{}'".format(name))
     for row in cur.fetchall():
         print(row)
-
