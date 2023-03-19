@@ -22,7 +22,8 @@ if __name__ == '__main__':
     Session = sessionmaker(engine)
     session = Session()
 
-    query = session.query(State).filter(State.name == sys.argv[4]).order_by(State.id).all()
+    query = session.query(State).filter(State.name == sys.argv[4]).\
+        order_by(State.id).all()
     if query:
         try:
             print(query.id)
