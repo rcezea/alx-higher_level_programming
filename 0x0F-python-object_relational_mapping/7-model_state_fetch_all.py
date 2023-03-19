@@ -21,7 +21,7 @@ if __name__ == '__main__':
     Session = sessionmaker(engine)
     session = Session()
 
-    #Query the database
+    # Query the database
     query = session.query(State)
 
     for row in query:
