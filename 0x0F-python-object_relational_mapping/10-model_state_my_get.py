@@ -24,6 +24,10 @@ if __name__ == '__main__':
 
     query = session.query(State).filter(State.name == sys.argv[4]).order_by(State.id).all()
     if query:
-        print(query[0].id)
+        try:
+            print(query.id)
+        except Exception:
+            for row in query:
+                print(row.id)
     else:
         print("Not found")
