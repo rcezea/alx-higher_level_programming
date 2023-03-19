@@ -24,7 +24,7 @@ if __name__ == '__main__':
     # Query the database
     lousiana = State(name='Louisiana')
 
-    #Save changes to session
+    # Save changes to session
     session.add(lousiana)
     session.commit()
     print(lousiana.id)
