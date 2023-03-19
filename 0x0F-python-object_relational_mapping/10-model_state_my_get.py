@@ -24,7 +24,6 @@ if __name__ == '__main__':
 
     query = session.query(State).filter(State.name == sys.argv[4]).order_by(State.id).all()
     if query:
-        for row in query:
-            print(row.id)
+        print(query[0].id)
     else:
         print("Not found")
