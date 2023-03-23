@@ -6,7 +6,7 @@ Francisco” from the database hbtn_0e_100_usa
 '''
 
 from sys import argv
-from relationship_city import City, Base, eng
+from relationship_city import City, Base
 from sqlalchemy.orm import Session
 from relationship_state import State
 from sqlalchemy import create_engine
