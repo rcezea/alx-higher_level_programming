@@ -12,8 +12,8 @@ from relationship_state import State,  Base
 from sqlalchemy import create_engine
 
 if __name__ == '__main__':
-    engine = create_engine(f"mysql+mysqldb:\
-                           //{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}")
+    db = f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}"
+    engine = create_engine(db)
     Base.metadata.create_all(engine)
     session = Session
     s1 = State(name='California')
