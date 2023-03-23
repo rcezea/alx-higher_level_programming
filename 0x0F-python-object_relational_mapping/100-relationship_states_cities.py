@@ -14,6 +14,7 @@ from sqlalchemy import create_engine
 if __name__ == '__main__':
     engine = create_engine(f"mysql+mysqldb:\
                            //{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}")
+    Base.metadata.create_all(engine)
     session = Session
     s1 = State(name='California')
     c1 = City(name='San Francisco')
