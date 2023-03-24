@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 """
-improve model_city
+A module that contains the class definition
+of Cites and an instance declarative_base()
 """
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
 
-Base = declarative_base()
+from sqlalchemy import Column, Integer, String, ForeignKey
+from relationship_state import Base
 
 
 class City(Base):
-    """ class named City"""
+    """My city class"""
+
     __tablename__ = "cities"
-    id = Column(Integer(), nullable=False, primary_key=True)
+    id = Column(Integer(), nullable=False,  primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer(), ForeignKey("states.id"), nullable=False)
+    state_id = Column(Integer(), ForeignKey('states.id'), nullable=False)
