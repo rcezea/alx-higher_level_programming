@@ -6,8 +6,7 @@ if __name__ == '__main__':
 
     with re.urlopen('https://alx-intranet.hbtn.io/status') as response:
         html = response.read()
-    string = f"Body response:\n\
-        \t- type: {type(html)}\n\
-        \t- content: {html}\n\
-        \t- utf8 content: {html.decode('utf-8')}"
-    print(string)
+    print("Body response:")
+    print("\t- type: {}".format(type(html)))
+    print("\t- content: {}".format(html))
+    print("\t- utf8 content: {}".format(html.decode('utf-8')))
