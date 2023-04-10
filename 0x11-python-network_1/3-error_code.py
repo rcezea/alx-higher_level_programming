@@ -10,7 +10,7 @@ if __name__ == '__main__':
     import sys
 
     try:
-        with urllib.request.urlopen('http://rclancing.tech/call') as response:
+        with urllib.request.urlopen(sys.argv[1]) as response:
             print(response.read())
     except HTTPError as e:
         print("Error code:", e.code)
