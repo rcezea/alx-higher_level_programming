@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-# Fetch a website
+''' This module is used to fetch html content'''
 
 if __name__ == '__main__':
     import urllib.request
-    ''' This module is used to fetch html content'''
 
     with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
         html = response.read()
