@@ -6,7 +6,7 @@ Display error codes
 if __name__ == '__main__':
 
     from requests.exceptions import HTTPError
-    import requests 
+    import requests
     import sys
 
     url = sys.argv[1]
