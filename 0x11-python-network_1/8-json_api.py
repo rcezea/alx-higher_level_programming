@@ -12,12 +12,15 @@ if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
     if len(sys.argv) == 2:
         q = {'q': sys.argv[1]}
-        r = requests.post(url, data=q)
-        obj = r.json
-        print("[{}] {}".format(obj["id"], obj["name"]))
     else:
         q = ""
-        print("No result")
 
     r = requests.post(url, data=q)
-    print(r.json)
+    try:
+        obj = r.json
+        if not obj:
+            print("No result")
+            exit(1)
+        print("[{}] {}".format(obj["id"], obj["name"]))
+    except Exception:
+        print("Not a valid JSON")
