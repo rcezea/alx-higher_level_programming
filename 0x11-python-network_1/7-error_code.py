@@ -4,8 +4,6 @@ Display error codes
 """
 
 if __name__ == '__main__':
-
-    from requests.exceptions import HTTPError
     import requests
     import sys
 
@@ -16,4 +14,4 @@ if __name__ == '__main__':
         r.raise_for_status()
         print(r.text)
     except Exception:
-        print("Error code: ", r.status_code)
+        print("Error code:", r.status_code)
