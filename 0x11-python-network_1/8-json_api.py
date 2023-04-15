@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     r = requests.post(url, data=q)
     try:
-        obj = r.json
+        obj = r.json()
         if not obj:
             print("No result")
             exit(1)
