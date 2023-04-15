@@ -9,11 +9,15 @@ if __name__ == "__main__":
     import requests
     import sys
 
+    url = "http://0.0.0.0:5000/search_user"
     if len(sys.argv) == 2:
-        q = {'letter': sys.argv[1]}
+        q = {'q': sys.argv[1]}
+        r = requests.post(url, data=q)
+        obj = r.json
+        print("[{}] {}".format(obj["id"], obj["name"]))
     else:
         q = ""
+        print("No result")
 
-    url = "http://0.0.0.0:5000/search_user"
-    r = requests.post(url, params=q)
+    r = requests.post(url, data=q)
     print(r.json)
