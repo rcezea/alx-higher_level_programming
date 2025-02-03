@@ -13,8 +13,11 @@ def text_indentation(text):
 
     for i in range(len(text)):
         if text[i - 1] in ('.', '?', ':'):
-            new_text += '\n\n'
+            new_text += '\n'
             arr.append(new_text.lstrip())
             new_text = ''
         new_text += text[i]
     arr.append(new_text.strip())
+
+    for a in arr:
+        print(a)
