@@ -19,5 +19,10 @@ def text_indentation(text):
         new_text += text[i]
     arr.append(new_text.strip())
 
-    for a in arr:
-        print(a)
+    size = len(arr)
+
+    for i in range(size):
+        if i == size - 1:
+            print(arr[i], end='')
+        else:
+            print(arr[i])
