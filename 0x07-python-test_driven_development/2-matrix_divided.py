@@ -2,7 +2,7 @@
 """Divide all elements of a matrix."""
 
 
-def matrix_divided(matrix, div=1):
+def matrix_divided(matrix, div):
     """Divide all elements of a matrix."""
 
     if not isinstance(div, (int, float)):
