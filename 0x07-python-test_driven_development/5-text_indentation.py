@@ -9,11 +9,12 @@ def text_indentation(text):
         raise TypeError('text must be a string')
 
     new_text = ''
+    arr = []
 
     for i in range(len(text)):
         if text[i - 1] in ('.', '?', ':'):
             new_text += '\n\n'
-            if text[i] == ' ':
-                continue
+            arr.append(new_text.lstrip())
+            new_text = ''
         new_text += text[i]
-    print(new_text)
+    arr.append(new_text.strip())
