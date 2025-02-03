@@ -12,8 +12,11 @@ def text_indentation(text):
 
     for i in range(len(text)):
         if text[i - 1] in ('.', '?', ':'):
-            new_text += '\n'
+            new_text += '\n\n'
             if text[i] == ' ':
                 continue
         new_text += text[i]
     print(new_text)
+
+
+text_indentation('Holberton. School? How are you: John')
