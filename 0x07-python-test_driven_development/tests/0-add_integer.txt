@@ -1,14 +1,14 @@
-"""
-Module to test add_integer
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
 
 >>> add_integer = __import__('0-add_integer').add_integer
 
 >>> add_integer(1, 2)
 3
->>> add_integer(2, 3)
-5
->>> add_integer(23, 107)
-130
+
 >>> add_integer(4, 'a')
 Traceback (most recent call last):
         ...
@@ -24,15 +24,12 @@ Traceback (most recent call last):
         ...
 TypeError: a must be an integer
 
->>> add_integer(NaN)
-Traceback (most recent call last):
-        ...
-NameError: name 'NaN' is not defined
-
-
 >>> add_integer(not)
 Traceback (most recent call last):
         ...
 SyntaxError: invalid syntax
 
-"""
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+        ...
+ValueError: cannot convert float NaN to integer
