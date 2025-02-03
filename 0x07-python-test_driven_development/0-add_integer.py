@@ -3,21 +3,21 @@
 Function that adds two integers
 """
 
-def add_integer(a, b=98):
+
+def add_integer( a, b = 98 ):
     """
     Function that adds two integers
     """
-    types = [float, int]
 
+    if a is None:
+        raise TypeError( "add_integer() missing 1 required positional argument: 'a'" )
 
-    if not type(a) in types:
-        raise TypeError("a must be an integer")
+    types = [ float, int ]
 
-    if not type(b) in types:
-        raise TypeError("b must be an integer")
+    if not type( a ) in types:
+        raise TypeError( "a must be an integer" )
 
-    return int(a) + int(b)
+    if not type( b ) in types:
+        raise TypeError( "b must be an integer" )
 
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+    return int( a ) + int( b )
