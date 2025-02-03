@@ -13,9 +13,10 @@ def text_indentation(text):
     new_text = ''
 
     for i in range(len(text)):
+        if last == i and last != 0: new_text += '\n\n'
         if text[i] in ('.', '?', ':'):
-            new_text += text[last:i + 1].strip() + '\n\n'
+            new_text += text[last:i + 1].strip()
             last = i + 1
     new_text += text[last:].strip()
 
-    print(new_text if new_text else text)
+    print(new_text)
