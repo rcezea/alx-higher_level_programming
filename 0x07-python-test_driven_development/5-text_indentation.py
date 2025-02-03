@@ -8,10 +8,6 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError('text must be a string')
 
-    if len(text) == 0:
-        print('')
-        return
-
     new_text = ''
     arr = []
 
@@ -26,7 +22,7 @@ def text_indentation(text):
     size = len(arr)
 
     for i in range(size):
-        if i == size - 1:
+        if i == size - 1 and size > 1:
             print(arr[i], end='')
         else:
             print(arr[i])
